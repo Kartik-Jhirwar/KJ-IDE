@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from 'react';
-import marked from 'marked';
+import * as marked from 'marked';
+
 
 interface File {
   id: number;

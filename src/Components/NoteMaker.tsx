@@ -7,6 +7,18 @@ interface Note {
   id: number;
   text: string;
 }
+interface TasksByStatus {
+  [key: string]: Note[];
+}
+
+const tasksByStatus: TasksByStatus = {
+  'To Do': [],
+  'In Progress': [],
+  'Done': [],
+};
+
+const source: string = 'To Do'; // Example assignment
+const tasks = tasksByStatus[source]; 
 
 const initialCategories = {
   'To Do': [] as Note[],
