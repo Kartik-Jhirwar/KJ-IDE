@@ -18,7 +18,10 @@
     "react-markdown": "^9.0.1"
   },
   "devDependencies": {
+    "@types/estree": "^1.0.5",
+    "@types/estree-jsx": "^1.0.5",
     "@types/marked": "^6.0.0",
+    "@types/mdast": "^4.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-beautiful-dnd": "^13.1.8",

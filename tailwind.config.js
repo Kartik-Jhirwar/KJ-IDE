@@ -6,6 +6,7 @@ module.exports = {
     './components/**/*.{js,jsx,ts,tsx}', // Include components
     './src/app/**/*.css', // Include CSS files in the app directory
   ],
+  
   theme: {
     extend: {}, // Extend Tailwind CSS theme here
   },

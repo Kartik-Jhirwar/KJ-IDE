@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from 'react';
-import Sidebar from '../Components/Sidebar';
-import TextEditor from '../Components/TextEditor';
-import NoteMaker from '../Components/NoteMaker';
-import ListMaker from '../Components/ListMaker';
-import ReadmePreview from '../Components/ReadmePreview';
+import Sidebar from '../components/Sidebar';
+import TextEditor from '../components/TextEditor';
+import NoteMaker from '../components/NoteMaker';
+import ListMaker from '../components/ListMaker';
+import ReadmePreview from '../components/ReadmePreview';
 
 interface File {
   id: number;
