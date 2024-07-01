@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import * as marked from 'marked';  // Import marked
+import * as marked from 'marked';
+
 
 interface File {
   id: number;
@@ -26,7 +27,7 @@ export default function ReadmePreview({ file }: ReadmePreviewProps) {
     <div className="p-4">
       <h2 className="text-2xl mb-4">{file.name}</h2>
       <input type="file" className="mb-4" onChange={handleFileChange} />
-      <div className="prose" dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+      <div className="prose" dangerouslySetInnerHTML={{ __html: marked.parse(content) }}></div>
     </div>
   );
 }
