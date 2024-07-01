@@ -8,6 +8,17 @@ interface Note {
   text: string;
 }
 
+interface Categories {
+  [key: string]: Note[];
+}
+
+const categories: Categories = {
+  'To Do': [],
+  'In Progress': [],
+  'Done': []
+};
+
+
 const initialCategories = {
   'To Do': [] as Note[],
   'In Progress': [] as Note[],
@@ -40,9 +51,10 @@ export default function NoteMaker({ file }: NoteMakerProps) {
     const { source, destination } = result;
     if (!destination) return;
 
-    const sourceCategory = categories[source.droppableId];
+    const sourceCategory = categories[source.droppableId as keyof typeof categories];
+
     const [movedNote] = sourceCategory.splice(source.index, 1);
-    const destinationCategory = categories[destination.droppableId];
+    const destinationCategory = categories[destination.droppableId as keyof typeof categories];
     destinationCategory.splice(destination.index, 0, movedNote);
 
     setCategories({
@@ -64,7 +76,7 @@ export default function NoteMaker({ file }: NoteMakerProps) {
                 <div className="w-1/3" ref={provided.innerRef} {...provided.droppableProps}>
                   <h3 className="text-xl mb-2">{category}</h3>
                   <div className="bg-gray-100 p-2 rounded">
-                    {categories[category].map((note, index) => (
+                    {categories[category as keyof typeof categories].map((note, index) => (
                       <Draggable key={note.id} draggableId={`${note.id}`} index={index}>
                         {(provided) => (
                           <div
